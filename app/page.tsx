@@ -15,7 +15,7 @@ export default function Home() {
           <p className="font-serif">
             Hi guys! This is Li Xu. I am currently a junior software enigneer at
             Booking.com. This is my personal blog and my playground. I am using
-            this to learn design and practice my frontend skills. I will alsp share
+            this to learn design and practice my frontend skills. I will also share
             some of my pains and gains during work and self-development.
           </p>
         </div>
