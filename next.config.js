@@ -1,3 +1,11 @@
+/*
+ * @Author: xvllinihao lixu_work@yahoo.com
+ * @Date: 2023-10-14 13:01:04
+ * @LastEditors: xvllinihao lixu_work@yahoo.com
+ * @LastEditTime: 2023-10-14 13:17:28
+ * @FilePath: \xvllinihao.github.io\next.config.js
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 // @ts-check
 
 /**
@@ -16,7 +24,7 @@ const nextConfig = {
    *
    * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
    */
-  basePath: "/nextjs-github-pages",
+  basePath: "",
 
   /**
    * Disable server-based image optimization. Next.js does not support
