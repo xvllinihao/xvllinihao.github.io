@@ -7,6 +7,9 @@ import { CN, US, JP, NL } from "country-flag-icons/react/3x2";
 export default function Resume() {
   return (
     <main>
+      <head>
+        <title>Il Li Rampante</title>
+      </head>
       <div className="bg-amber-100">
         <div className="pl-12 pr-12 pb-5 pt-5">
           <div className="text-center flex items-center">
@@ -55,7 +58,7 @@ export default function Resume() {
             </div>
             <div className="flex flex-col indent-6">
               <h2 className="font-serif">
-                Delft Technologyu University -- Teaching Assistant
+                Delft Technology University -- Teaching Assistant
               </h2>
               <p className="text-sm font-serif">
                 2021.09-2021.10 <span className="ml-4" /> Delft, Netherlands{" "}
