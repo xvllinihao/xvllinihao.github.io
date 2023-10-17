@@ -3,13 +3,15 @@ import { AiFillTool } from "react-icons/ai";
 import { FaPython, FaJava, FaRust } from "react-icons/fa";
 import { SiCplusplus, SiJavascript } from "react-icons/si";
 import { CN, US, JP, NL } from "country-flag-icons/react/3x2";
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Il Li Rampante',
+} 
 
 export default function Resume() {
   return (
     <main>
-      <head>
-        <title>Il Li Rampante</title>
-      </head>
       <div className="bg-amber-100">
         <div className="pl-12 pr-12 pb-5 pt-5">
           <div className="text-center flex items-center">

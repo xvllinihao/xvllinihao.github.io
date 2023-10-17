@@ -8,6 +8,7 @@
  */
 import "./globals.css";
 import MyHeader from "./component/MyHeader";
+import Head from "next/head";
 
 export default function RootLayout({
   children,
@@ -24,6 +25,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <Head>{}</Head>
       <body className="bg-jin-blue min-h-fit">
         <div className="bg-jin-white flex-col flex gap-2 mx-auto container" style={containerStyles}>
           <MyHeader />

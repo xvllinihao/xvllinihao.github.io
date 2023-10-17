@@ -1,8 +1,14 @@
 import Link from "next/link";
 import matter from "gray-matter";
 import fs from "fs";
+import Head from "next/head";
+import { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'Il Li Rampante',
+} 
 
-export async function getPosts() {
+async function getPosts() {
   // Get all your posts
   const files = fs.readdirSync("posts");
   const posts = files.map((fileName) => {
@@ -25,18 +31,19 @@ export default async function Articles() {
   const posts = (await getPosts()).posts;
 
   return (
-    <main className="min-h-screen">
-      <head>
+    <main>
+      <Head>
         <title>Il Li Rampante</title>
-      </head>
-      <div className="bg-amber-100 min-h-screen flex flex-col">
+      </Head>
+      <div className="bg-amber-100 flex flex-col">
         {posts.map(({ slug, frontmatter }) => (
           <div
             key={slug}
-            className="m-2 rounded-xl shadow-lg overflow-hidden flex flex-col"
+            className="m-2 flex flex-col"
           >
-            <Link href={`/articles/${slug}`}>
-              <h1 className="p-4">{frontmatter.title}</h1>
+            <p className="font-serif ml-2">{frontmatter.date}</p>
+            <Link href={`/article/${slug}`}>
+              <h1 className="ml-4 mt-2 font-serif underline">{frontmatter.title}</h1>
             </Link>
           </div>
         ))}

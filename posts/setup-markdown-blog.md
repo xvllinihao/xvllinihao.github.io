@@ -8,5 +8,5 @@ tags:
   - nextjs
 ---
 
-# The main content
-wo shi yi ge da sha bi
+## The main content
+The trick is that we should use `generateStaticParams()` rather than the old `getStaticParams()` to generate dynamic routes. 
