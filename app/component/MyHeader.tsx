@@ -56,7 +56,7 @@ export default function MyHeader() {
       </div>
       <div className="text-center flex items-center">
         <AiFillGithub className="mr-1" />
-        <a href="" target="_blank" className="text-blue-500/75">
+        <a href="https://github.com/xvllinihao" target="_blank" className="text-blue-500/75">
           github.com/xvllinihao
         </a>
       </div>
