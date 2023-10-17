@@ -19,7 +19,7 @@ export function generateStaticParams() {
 }
 
 
-export async function getPost(slug:string) {
+async function getPost(slug:string) {
   const fileName = fs.readFileSync(`posts/${slug}.md`, "utf-8");
   console.log("slug:", slug);
   const { data: frontmatter, content } = matter(fileName);
