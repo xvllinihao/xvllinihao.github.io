@@ -37,7 +37,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <main className="bg-amber-100">
-    <div className="prose mx-auto">
+    <div className="prose ml-4 mr-4">
       <h1>{post.props.frontmatter.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: md().render(post.props.content) }} />
     </div>
