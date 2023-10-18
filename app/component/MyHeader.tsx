@@ -14,8 +14,8 @@ export default function MyHeader() {
   const pathname = usePathname();
 
   return (
-    <div className="bg-jin-yellow min-h-min flex flex-col items-center justify-center p-4">
-      <div className="flex flex-row gap-6">
+    <div className="bg-white min-h-min flex flex-col items-center justify-center p-4">
+      <div className="flex flex-row gap-6 text-[24px]">
         <Link
           href="/"
           className={`font-serif font-bold ${
@@ -41,7 +41,7 @@ export default function MyHeader() {
           Articles
         </Link>
       </div>
-      <div className="mr-2 p-2">
+      <div className="p-2">
         <img className="rounded-full h-28" src="/me.jpg" alt="my photo" />
       </div>
       <div className="text-center flex items-center">

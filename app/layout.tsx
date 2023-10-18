@@ -16,17 +16,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const containerStyles = {
-    maxWidth: "600px",
+    maxWidth: "640px",
     padding: "30px",
     margin: "0 auto", // Center the container horizontally
-    transform: "scale(1.5)", // Zoom content to 150%
-    transformOrigin: "top", // Set the zoom origin to the top
+    // transform: "scale(1.5)", // Zoom content to 150%
+    // transformOrigin: "top", // Set the zoom origin to the top
   };
 
   return (
     <html lang="en">
-      <body className="bg-jin-blue min-h-fit">
-        <div className="bg-jin-white flex-col flex gap-2 mx-auto container" style={containerStyles}>
+      <body className="bg-white min-h-fit text-[20px]">
+        <div className="bg-white flex-col flex gap-2 mx-auto container" style={containerStyles}>
           <MyHeader />
           {children}
         </div>

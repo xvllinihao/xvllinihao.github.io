@@ -28,6 +28,9 @@ module.exports = {
       fontFamily: {
         'display': ['Oswald'],
       },
+      fotnSize: {
+        'base': '20px',
+      }
     },
   },
   plugins: [

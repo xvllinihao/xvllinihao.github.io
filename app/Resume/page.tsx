@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Resume() {
   return (
     <main>
-      <div className="bg-amber-100">
+      <div className="bg-white">
         <div className="pl-12 pr-12 pb-5 pt-5">
           <div className="text-center flex items-center">
             <MdSchool className="mr-1" />

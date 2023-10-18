@@ -35,7 +35,7 @@ export default async function Articles() {
       <Head>
         <title>Il Li Rampante</title>
       </Head>
-      <div className="bg-amber-100 flex flex-col">
+      <div className="bg-white flex flex-col">
         {posts.map(({ slug, frontmatter }) => (
           <div
             key={slug}
