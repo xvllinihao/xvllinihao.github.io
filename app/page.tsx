@@ -9,7 +9,7 @@ export default function Home() {
     <main className="min-h-fit flex flex-col gap-2">
       <div className="bg-white max-w-screen-sm mx-auto align-top">
         <div className="p-12">
-          <p className="font-serif text-left">
+          <p className="font-serif text-justify">
             Hi guys! This is Li Xu. I am currently a junior software engineer at
             Booking.com. This is my personal blog and my playground. I am using
             this to learn design and practice my frontend skills. I will also
@@ -18,7 +18,7 @@ export default function Home() {
         </div>
       </div>
       <div className="max-w-screen-sm mx-auto align-top">
-        <p className="bg-white text-center text-[28px] font-display p-4">
+        <p className="bg-white text-justify text-[28px] font-display p-4">
           "If the world is increasingly senseless,
           <br />
           all we can do is to give it a style. -Italo Calvino"
@@ -26,12 +26,12 @@ export default function Home() {
       </div>
       <div className="bg-white max-w-screen-sm mx-auto align-top">
         <div className="p-12">
-          <p className="font-serif text-left">
+          <p className="font-serif text-justify">
             Calvino is my favorite author. And this is my favorite sentence from
             him, I hope I can start adding styles to my life by keep writing
             this blog :).
           </p>
-          <p className="font-serif text-left">
+          <p className="font-serif text-justify">
             Also, I name my blog as Il Li Rampante is also a salute to Calvino's
             masterpiece Il Baron Rampante.
           </p>
