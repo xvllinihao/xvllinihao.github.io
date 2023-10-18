@@ -16,7 +16,7 @@ export default function Resume() {
         <div className="pl-12 pr-12 pb-5 pt-5">
           <div className="text-center flex items-center">
             <MdSchool className="mr-1" />
-            <h1 className="font-serif text-lg">
+            <h1 className="font-serif text-xl font-bold">
               Education
               <br />
             </h1>
@@ -39,7 +39,7 @@ export default function Resume() {
         <div className="pl-12 pr-12 pb-5">
           <div className="text-center flex items-center">
             <MdWork className="mr-1" />
-            <h1 className="font-serif text-lg">Work Experience</h1>
+            <h1 className="font-serif text-xl font-bold">Work Experience</h1>
           </div>
           <div className="flex flex-col">
             <div className="flex flex-col indent-6">
@@ -79,7 +79,7 @@ export default function Resume() {
         <div className="pl-12 pr-12 pb-5">
           <div className="text-center flex items-center">
             <AiFillTool className="mr-1" />
-            <h1 className="font-serif text-lg">Skills</h1>
+            <h1 className="font-serif text-xl font-bold">Skills</h1>
           </div>
           <div className="flex flex-row justify-between pl-6 pr-6">
             <div className="text-center flex items-center">
@@ -107,7 +107,7 @@ export default function Resume() {
         <div className="pl-12 pr-12 pb-5 flex flex-col">
         <div className="text-center flex items-center">
                 <MdPublish className="mr-1" />
-                <h1 className="font-serif text-lg">Publication</h1>
+                <h1 className="font-serif text-xl font-bold">Publication</h1>
               </div>
           <ul className="list-disc ml-6">
             <li>    
@@ -138,7 +138,7 @@ export default function Resume() {
         <div className="pl-12 pr-12 pb-5">
           <div className="text-center flex items-center">
             <MdLanguage className="mr-1" />
-            <h1 className="font-serif text-lg">Language</h1>
+            <h1 className="font-serif text-xl font-bold">Language</h1>
           </div>
           <div className="flex flex-col justify-between">
             <div className="flex items-center">
