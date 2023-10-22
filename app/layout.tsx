@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const containerStyles = {
-    maxWidth: "640px",
-    padding: "30px",
+    maxWidth: "700px",
+    padding:  "30 px",
     margin: "0 auto", // Center the container horizontally
     // transform: "scale(1.5)", // Zoom content to 150%
     // transformOrigin: "top", // Set the zoom origin to the top

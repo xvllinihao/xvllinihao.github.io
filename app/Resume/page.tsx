@@ -13,7 +13,7 @@ export default function Resume() {
   return (
     <main>
       <div className="bg-white">
-        <div className="pl-12 pr-12 pb-5 pt-5">
+        <div className="pb-5 pt-5">
           <div className="text-center flex items-center">
             <MdSchool className="mr-1" />
             <h1 className="font-serif text-xl font-bold">
@@ -36,7 +36,7 @@ export default function Resume() {
             </h2>
           </div>
         </div>
-        <div className="pl-12 pr-12 pb-5">
+        <div className="pb-5">
           <div className="text-center flex items-center">
             <MdWork className="mr-1" />
             <h1 className="font-serif text-xl font-bold">Work Experience</h1>
@@ -76,7 +76,7 @@ export default function Resume() {
             </div>
           </div>
         </div>
-        <div className="pl-12 pr-12 pb-5">
+        <div className="pb-5">
           <div className="text-center flex items-center">
             <AiFillTool className="mr-1" />
             <h1 className="font-serif text-xl font-bold">Skills</h1>
@@ -104,7 +104,7 @@ export default function Resume() {
             </div>
           </div>
         </div>
-        <div className="pl-12 pr-12 pb-5 flex flex-col">
+        <div className="pb-5 flex flex-col">
         <div className="text-center flex items-center">
                 <MdPublish className="mr-1" />
                 <h1 className="font-serif text-xl font-bold">Publication</h1>
@@ -135,7 +135,7 @@ export default function Resume() {
             </li>
           </ul>
         </div>
-        <div className="pl-12 pr-12 pb-5">
+        <div className="pb-5">
           <div className="text-center flex items-center">
             <MdLanguage className="mr-1" />
             <h1 className="font-serif text-xl font-bold">Language</h1>
