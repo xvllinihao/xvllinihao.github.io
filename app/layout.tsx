@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   const containerStyles = {
     maxWidth: "700px",
-    padding:  "30 px",
+    padding:  "20px",
     margin: "0 auto", // Center the container horizontally
     // transform: "scale(1.5)", // Zoom content to 150%
     // transformOrigin: "top", // Set the zoom origin to the top
@@ -25,8 +25,8 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className="bg-white min-h-fit text-[20px]">
-        <div className="bg-white flex-col flex gap-2 mx-auto container" style={containerStyles}>
+      <body className="bg-[#f8f9fa] min-h-fit text-[20px]">
+        <div className="bg-white flex-col flex gap-2 mx-auto container min-h-screen" style={containerStyles}>
           <MyHeader />
           {children}
         </div>
