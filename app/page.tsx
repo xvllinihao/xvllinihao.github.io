@@ -10,7 +10,7 @@ export default function Home() {
       <div className="bg-white max-w-screen-sm mx-auto align-top">
         <div>
           <p className="font-serif text-justify">
-            Hi guys! This is Li Xu. I am currently a junior software engineer at
+            <span className="text-[24px] font-bold">Hi there, this is Li Xu.</span> I am currently a junior software engineer at
             Booking.com. This is my personal blog and my playground. I am using
             this to learn design and practice my frontend skills. I will also
             share some of my pains and gains during work and self-development.
