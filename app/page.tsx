@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import * as texts from "../public/texts/mainPageText";
 
 export const metadata: Metadata = {
   title: "Il Li Rampante",
@@ -10,30 +11,25 @@ export default function Home() {
       <div className="bg-white max-w-screen-sm mx-auto align-top">
         <div>
           <p className="font-serif text-justify">
-            <span className="text-[24px] font-bold">Hi there, this is Li Xu.</span> I am currently a junior software engineer at
-            Booking.com. This is my personal blog and my playground. I am using
-            this to learn design and practice my frontend skills. I will also
-            share some of my pains and gains during work and self-development.
+            <span className="text-[24px] font-bold">{texts.greetings}</span> 
+            {texts.introduction}
           </p>
         </div>
       </div>
       <div className="max-w-screen-sm mx-auto align-top">
         <p className="bg-white text-justify text-[28px] font-display p-4">
-          "If the world is increasingly senseless,
+          {texts.calvino_quote_first_half}
           <br />
-          all we can do is to give it a style. -Italo Calvino"
+          {texts.calvino_quote_second_half}
         </p>
       </div>
       <div className="bg-white max-w-screen-sm mx-auto align-top">
         <div>
           <p className="font-serif text-justify">
-            Calvino is my favorite author. And this is my favorite sentence from
-            him, I hope I can start adding styles to my life by keep writing
-            this blog :).
+            {texts.my_hope}
           </p>
           <p className="font-serif text-justify">
-            Also, I name my blog as Il Li Rampante is also a salute to Calvino's
-            masterpiece Il Baron Rampante.
+            {texts.naming_reason}
           </p>
         </div>
       </div>
