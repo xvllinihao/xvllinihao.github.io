@@ -31,16 +31,23 @@ async function getPost(slug:string) {
   };
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const post = await getPost(params.slug); // Pass the router.query as params
+// Add this interface to define the params type
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
 
+// Update the Page component to use the interface
+export default async function Page({ params }: PageProps) {
+  const post = await getPost(params.slug);
 
   return (
     <main>
-    <div className="prose ml-4 mr-4">
-      <h1>{post.props.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: md().render(post.props.content) }} />
-    </div>
+      <div className="prose ml-4 mr-4">
+        <h1>{post.props.frontmatter.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: md().render(post.props.content) }} />
+      </div>
     </main>
   );
 }
