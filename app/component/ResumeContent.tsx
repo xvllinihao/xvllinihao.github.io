@@ -133,13 +133,13 @@ export default function ResumeContent() {
     <main className="bg-white p-4">
       <div className="max-w-4xl mx-auto">
         {/* 忍者等级显示 */}
-        <div className="text-center mb-6 panel-border p-6 scroll-fade-in">
-          <h1 className="manga-title text-4xl mb-3">
-            <span className="manga-float">⚡</span> {t('ninjaRank')} <span className="manga-float">⚡</span>
+        <div className="text-center mb-6 manga-card p-6 scroll-fade-in">
+          <h1 className="font-black text-4xl mb-3 tracking-wider">
+            <span>⚡</span> {t('ninjaRank')} <span>⚡</span>
           </h1>
-          <p className="manga-text text-xl">{t('chuuninLevel')}</p>
+          <p className="font-semibold text-xl">{t('chuuninLevel')}</p>
           <div className="flex justify-center mt-3">
-            <span className="manga-sfx text-3xl">⭐⭐⭐</span>
+            <span className="text-3xl">⭐⭐⭐</span>
           </div>
         </div>
 
@@ -147,19 +147,19 @@ export default function ResumeContent() {
         <div className="manga-card p-6 mb-6 scroll-fade-in">
           <div className="text-center flex items-center justify-center mb-4">
             <MdSchool className="mr-3 text-black manga-float" size={28} />
-            <h1 className="manga-title text-2xl">🎓 {t('education')}</h1>
+            <h1 className="manga-title text-2xl">{t('education')}</h1>
           </div>
           
           <div className="space-y-4">
             {data.education.map((edu, index) => (
-              <div key={index} className="panel-border p-4 border-l-8 border-black ninja-seal">
-                <h2 className="manga-title text-xl mb-2">
+              <div key={index} className="bg-white border-4 border-black p-4 border-l-8 border-black">
+                <h2 className="font-bold text-xl mb-2">
                   {edu.school} -- {edu.degree}
                 </h2>
-                <p className="manga-text text-base mb-1">
+                <p className="font-medium text-base mb-1">
                   📅 {edu.period}
                 </p>
-                <p className="kishimoto-text text-sm">{edu.description}</p>
+                <p className="text-sm">{edu.description}</p>
               </div>
             ))}
           </div>
@@ -169,19 +169,19 @@ export default function ResumeContent() {
         <div className="manga-card p-6 mb-6 scroll-fade-in">
           <div className="text-center flex items-center justify-center mb-4">
             <MdWork className="mr-3 text-black manga-float" size={28} />
-            <h1 className="manga-title text-2xl">⚔️ {t('experience')}</h1>
+            <h1 className="manga-title text-2xl">{t('experience')}</h1>
           </div>
           
           <div className="space-y-4">
             {data.experience.map((exp, index) => (
-              <div key={index} className="panel-border p-4 border-l-8 border-black">
-                <h2 className="manga-title text-xl mb-2">
+              <div key={index} className="bg-white border-4 border-black p-4 border-l-8 border-black">
+                <h2 className="font-bold text-xl mb-2">
                   {exp.company} -- {exp.position}
                 </h2>
-                <p className="manga-text text-base mb-1">
+                <p className="font-medium text-base mb-1">
                   📅 {exp.period} 🌍 {exp.location}
                 </p>
-                <p className="manga-text text-sm text-gray-700">{exp.description}</p>
+                <p className="text-sm text-gray-700">{exp.description}</p>
               </div>
             ))}
           </div>
@@ -191,7 +191,7 @@ export default function ResumeContent() {
         <div className="manga-card p-6 mb-6 scroll-fade-in">
           <div className="text-center flex items-center justify-center mb-4">
             <AiFillTool className="mr-3 text-black manga-float" size={28} />
-            <h1 className="manga-title text-2xl">🥷 {t('skills')}</h1>
+            <h1 className="manga-title text-2xl"> {t('skills')}</h1>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -227,15 +227,15 @@ export default function ResumeContent() {
         <div className="manga-card p-6 mb-6 scroll-fade-in">
           <div className="text-center flex items-center justify-center mb-4">
             <FaBook className="mr-3 text-black manga-float" size={28} />
-            <h1 className="manga-title text-2xl">📖 {t('publications')}</h1>
+            <h1 className="manga-title text-2xl"> {t('publications')}</h1>
           </div>
           
           <div className="space-y-4">
             {data.publications.map((pub, index) => (
-              <div key={index} className="panel-border p-4 border-l-8 border-black">
-                <h2 className="manga-title text-lg mb-2">{pub.title}</h2>
-                <p className="manga-text text-base mb-1">🏛️ {pub.venue}</p>
-                <p className="kishimoto-text text-sm">{pub.description}</p>
+              <div key={index} className="bg-white border-4 border-black p-4 border-l-8 border-black">
+                <h2 className="font-bold text-lg mb-2">{pub.title}</h2>
+                <p className="font-medium text-base mb-1">🏛️ {pub.venue}</p>
+                <p className="text-sm">{pub.description}</p>
               </div>
             ))}
           </div>
@@ -245,7 +245,7 @@ export default function ResumeContent() {
         <div className="manga-card p-6 mb-6 scroll-fade-in">
           <div className="text-center flex items-center justify-center mb-4">
             <MdLanguage className="mr-3 text-black manga-float" size={28} />
-            <h1 className="manga-title text-2xl">🌍 {t('languages')}</h1>
+            <h1 className="manga-title text-2xl"> {t('languages')}</h1>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -268,18 +268,18 @@ export default function ResumeContent() {
         </div>
 
         {/* 忍者誓言 */}
-        <div className="text-center panel-border p-6 scroll-fade-in">
-          <h1 className="manga-title text-2xl mb-4">
-            <span className="manga-sfx">⚡</span> {t('ninjaOath')} <span className="manga-sfx">⚡</span>
+        <div className="text-center manga-card p-6 scroll-fade-in">
+          <h1 className="font-black text-2xl mb-4 tracking-wider">
+            <span>⚡</span> {t('Ore No Nindo')} <span>⚡</span>
           </h1>
-          <p className="kishimoto-text text-lg leading-relaxed">
+          <p className="font-medium text-lg leading-relaxed">
             {language === 'en' 
               ? '"Code with honor, debug with patience, deploy with courage. This is my ninja way!"' 
               : '"以荣誉编码，以耐心调试，以勇气部署。这就是我的忍道！"'
             }
           </p>
           <div className="mt-4">
-            <span className="manga-sfx text-2xl">🥷</span>
+            <span className="text-2xl">🥷</span>
           </div>
         </div>
       </div>
