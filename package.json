@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "country-flag-icons": "^1.5.7",
+    "country-flag-icons": "^1.5.11",
     "eslint-config-next": "^15.0.2",
     "gray-matter": "^4.0.3",
     "markdown-it": "^13.0.2",

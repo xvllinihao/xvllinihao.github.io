@@ -1,15 +1,15 @@
-import Link from "next/link";
+// 移除未使用的Link导入
 import matter from "gray-matter";
 import fs from "fs";
-import Head from "next/head";
 import { Metadata } from 'next'
+import ArticleList from "../component/ArticleList";
  
 export const metadata: Metadata = {
-  title: 'Il Li Rampante',
+  title: 'Articles - Li no Shinobi',
 } 
 
 async function getPosts() {
-  // Get all your posts
+  try {
   const files = fs.readdirSync("posts");
   const posts = files.map((fileName) => {
     const slug = fileName.replace(".md", "");
@@ -21,33 +21,14 @@ async function getPosts() {
       frontmatter,
     };
   });
-
-  return {
-    posts,
-  };
+    return posts;
+  } catch (error) {
+    console.error("Error reading posts:", error);
+    return [];
+  }
 }
 
 export default async function Articles() {
-  const posts = (await getPosts()).posts;
-
-  return (
-    <main>
-      <Head>
-        <title>Il Li Rampante</title>
-      </Head>
-      <div className="bg-white flex flex-col">
-        {posts.map(({ slug, frontmatter }) => (
-          <div
-            key={slug}
-            className="m-2 flex flex-col"
-          >
-            <p className="font-serif ml-2">{frontmatter.date}</p>
-            <Link href={`/article/${slug}`}>
-              <h1 className="ml-4 mt-2 font-serif underline">{frontmatter.title}</h1>
-            </Link>
-          </div>
-        ))}
-      </div>
-    </main>
-  );
+  const posts = await getPosts();
+  return <ArticleList posts={posts} />;
 }

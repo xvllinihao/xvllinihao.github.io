@@ -1,6 +1,11 @@
 import "./globals.css";
 import MyHeader from "./component/MyHeader";
+import LanguageProvider from "./component/LanguageProvider";
 
+export const metadata = {
+  title: "Li no Nindo - Chunnin Developer",
+  description: "Li Xu's ninja journey in software development"
+};
 
 export default function RootLayout({
   children,
@@ -15,11 +20,13 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className="bg-[#f8f9fa] min-h-fit text-[20px]">
-        <div className="bg-white flex-col flex gap-2 mx-auto container min-h-screen" style={containerStyles}>
-          <MyHeader />
-          {children}
-        </div>
+      <body className="bg-white min-h-fit text-[20px] text-black">
+        <LanguageProvider>
+          <div className="bg-white flex-col flex gap-2 mx-auto container min-h-screen border-4 border-black" style={containerStyles}>
+            <MyHeader />
+            {children}
+          </div>
+        </LanguageProvider>
       </body>
     </html>
   );

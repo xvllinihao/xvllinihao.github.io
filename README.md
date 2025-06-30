@@ -1,132 +1,114 @@
-# Next.js Github Pages
+# 木の葉の李旭 (Li no Rampante) - 忍者ブログ 🍃
 
-Deploy Next.js to Github Pages with Github Actions. [View the deployed app](https://gregrickaby.github.io/nextjs-github-pages/) 🚀
+欢迎来到木叶隐村！这是一个火影忍者风格的个人网站和博客。
 
-Now with Next.js 13 App Router support! If you need Pages Router support [click here](https://github.com/gregrickaby/nextjs-github-pages/releases/tag/pages_dir).
+## 🥷 网站特色
 
-> ⚠️ Heads up! Github Pages _does not_ support serverless or edge functions. This means dynamic functionality will be disabled. See all the [unsupported features](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports#unsupported-features).
+- **火影忍者主题设计**: 采用木叶隐村的橙色和红色配色方案
+- **日式元素**: 大量使用日文文本和忍者相关的图标
+- **响应式设计**: 适配各种设备尺寸
+- **动画效果**: 包含浮动叶子动画和悬停效果
+- **现代技术栈**: Next.js 15 + TypeScript + Tailwind CSS
 
----
+## 📚 页面结构
 
-## Configure Next.js
+### 🏠 里 (主页)
+- 个人介绍（火影风格）
+- 卡尔维诺名言
+- 博客命名缘由
+- 木叶隐村欢迎信息
 
-### Next.js Config
+### 📜 忍者証 (简历)
+- **忍者等级**: 中忍级别
+- **忍者学校**: 教育背景
+- **任务履历**: 工作经验
+- **忍术技能**: 编程技能
+- **秘传书**: 研究论文
+- **通信术**: 语言能力
 
-First, you need to configure Next.js to support static exports. To do this, specifiy the output type as `export`, set the base path, and disable automatic image optimization [since dynamic features don't work](https://nextjs.org/blog/next-12-3#disable-image-optimization-stable) with static exports.
+### 📚 修行録 (博客文章)
+- 文章列表
+- Markdown 支持
+- 火影主题的文章阅读页面
 
-1. Create `next.config.js` file
-2. Add the following:
+## 🛠️ 技术栈
 
-```js
-// @ts-check
+- **框架**: Next.js 15
+- **语言**: TypeScript
+- **样式**: Tailwind CSS + 自定义 CSS
+- **字体**: Noto Sans JP (日文字体)
+- **图标**: React Icons
+- **Markdown**: markdown-it + gray-matter
+- **部署**: 支持静态导出到 GitHub Pages
 
-/**
- * @type {import('next').NextConfig}
- **/
-const nextConfig = {
-  /**
-   * Enable static exports for the App Router.
-   *
-   * @see https://nextjs.org/docs/pages/building-your-application/deploying/static-exports
-   */
-  output: "export",
+## 🎨 设计特色
 
-  /**
-   * Set base path. This is usually the slug of your repository.
-   *
-   * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
-   */
-  basePath: "/nextjs-github-pages",
+### 配色方案
+- **木叶橙**: `#FF8C00` - `#FFA500`
+- **火影红**: `#DC2626` - `#EF4444`
+- **忍者蓝**: `#1E40AF` - `#3B82F6`
+- **木叶绿**: `#059669` - `#10B981`
 
-  /**
-   * Disable server-based image optimization. Next.js does not support
-   * dynamic features with static exports.
-   *
-   * @see https://nextjs.org/docs/pages/api-reference/components/image#unoptimized
-   */
-  images: {
-    unoptimized: true,
-  },
-};
+### 动画效果
+- **浮动叶子**: 模拟落叶的漂浮动画
+- **卡片悬停**: 鼠标悬停时的阴影和位移效果
+- **渐现动画**: 页面滚动时的淡入效果
 
-module.exports = nextConfig;
-```
+### 忍者元素
+- 🍃 木叶标志
+- 🥷 忍者图标
+- 📜 卷轴图标
+- ⭐ 等级标识
+- 🎯 任务标记
 
-3. Save the `next.config.js`
-
-4. Finally, place a `.nojekyll` file in the `/public` directory to disable Github Pages from trying to create a [Jekyll](https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/) website.
-
-```treeview
-.
-├── app/
-├── public/
-│   └── .nojekyll
-├── next.config.js
-```
-
-Perfect! This is all you need to configure Next.js to work on Github Pages.
-
-### Add base path to `page.tsx`
-
-Next, you will need to add the base path to your `page.tsx` file. This is required for the images to appear on Github Pages.
-
-1. Open `app/page.tsx`
-2. Find the `Image` components
-3. Add `/nextjs-github-pages/` to the `src` prop:
-
-```tsx[class="line-numbers"]
-   <Image
-     src="/nextjs-github-pages/vercel.svg"
-     alt="Vercel Logo"
-     className={styles.vercelLogo}
-     width={100}
-     height={24}
-     priority
-   />
-```
-
-4. Save the `page.tsx` file
-
-Learn more by reading the official documentation [for basePath and images](https://nextjs.org/docs/app/api-reference/next-config-js/basePath#images).
-
----
-
-## Configure Github Repository
-
-Next you need to configure Github for automated deployments via Github Actions.
-
-### Enable Github Pages
-
-The following settings use the new [Github Action Workflow (beta)](https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/) to deploy. I prefer this workflow because you don't need to generate SSH keys or use a personal access token.
-
-1. Go to your repository's **Settings** tab
-2. Click "Pages" in the sidebar
-3. Under "Build and Deployment", select "Github Actions" as the source:
-
-![screenshot of github pages settings](https://github.com/gregrickaby/nextjs-github-pages/assets/200280/a5f757c3-f515-4ca2-aadf-d2979c2c3bf5)
-
-### Setup Github Action
-
-This is where the magic happens! This [workflow file](https://github.com/gregrickaby/nextjs-github-pages/blob/main/.github/workflows/deploy.yml) will automatically build and deploy the app when you push to the `main` branch.
-
-1. Create `.github/workflows/deploy.yml` file
-2. Paste the contents of <https://github.com/gregrickaby/nextjs-github-pages/blob/main/.github/workflows/deploy.yml>
-3. Save the `deploy.yml` file
-
-### Push to Github
-
-Now that everything is configured, you can push your code to Github. This will trigger the Github Action workflow and deploy your app to Github Pages.
+## 🚀 本地开发
 
 ```bash
-git add . && git commit -m "Initial commit" && git push
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
+
+# 构建生产版本
+npm run build
 ```
 
-You should see your site deployed to Github Pages in a few minutes. 🚀
+## 📝 博客文章
+
+在 `posts/` 目录中添加 Markdown 文件即可创建新的博客文章。
+
+文章格式:
+```markdown
+---
+title: "文章标题"
+date: "2024-01-01"
+description: "文章描述"
+---
+
+# 文章内容
+
+你的 Markdown 内容...
+```
+
+## 🌟 个人信息
+
+- **姓名**: 李旭 (Li Xu)
+- **职业**: 软件工程师 @ Booking.com
+- **学历**: 代尔夫特理工大学 计算机科学硕士
+- **专长**: Full-stack 开发、隐私保护技术
+- **忍者等级**: 中忍 ⭐⭐⭐
+
+## 🔗 联系方式
+
+- **LinkedIn**: [li-xu-412015216](https://www.linkedin.com/in/li-xu-412015216/)
+- **GitHub**: [xvllinihao](https://github.com/xvllinihao)
+- **Email**: xvllinihao@gmail.com
 
 ---
 
-## Wrap up
+**忍道**: 決して諦めない！ (永不放弃！)
 
-Thanks for reading and I hope this helps. If you noticed someting wrong, please [file an issue](https://github.com/gregrickaby/nextjs-github-pages/issues). Good luck! 🍻
+*"如果世界越来越无意义，我们能做的就是给它一种风格。" - 伊塔洛·卡尔维诺*
 
 ---
