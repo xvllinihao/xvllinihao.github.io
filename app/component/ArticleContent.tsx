@@ -1,6 +1,5 @@
 "use client";
 import md from "markdown-it";
-import matter from "gray-matter";
 import Link from "next/link";
 import { useLanguage } from "./LanguageProvider";
 import { useEffect, useState } from "react";
@@ -23,10 +22,12 @@ export default function ArticleContent({ slug }: { slug: string }) {
   useEffect(() => {
     const getArticle = async () => {
       try {
-        const fs = await import('fs');
-        const fileName = fs.readFileSync(`posts/${slug}.md`, "utf-8");
-        const { data: frontmatter, content } = matter(fileName);
-        setArticleData({ frontmatter, content });
+        const response = await fetch(`/api/articles/${slug}`);
+        if (!response.ok) {
+          throw new Error('Article not found');
+        }
+        const data = await response.json();
+        setArticleData(data);
       } catch {
         console.error("Error loading article");
         setError("Article not found");

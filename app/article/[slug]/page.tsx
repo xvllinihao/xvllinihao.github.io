@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import fs from 'fs';
+import matter from 'gray-matter';
 import ArticleContent from "../../component/ArticleContent";
 
 type Props = {
@@ -7,7 +9,6 @@ type Props = {
 
 export async function generateStaticParams() {
   try {
-    const fs = await import('fs');
     const files = fs.readdirSync('posts');
     return files
       .filter((filename) => filename.endsWith('.md'))
@@ -28,11 +29,9 @@ export async function generateMetadata(
   { params }: Props
 ): Promise<Metadata> {
   try {
-    const fs = await import('fs');
-    const matter = await import('gray-matter');
     const slug = (await params).slug;
     const fileName = fs.readFileSync(`posts/${slug}.md`, "utf-8");
-    const { data: frontmatter } = matter.default(fileName);
+    const { data: frontmatter } = matter(fileName);
     
     return {
       title: `${frontmatter.title} - Li no Shinobi`,
